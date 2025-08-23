@@ -17,31 +17,18 @@ const projects = await getAllProjects()
     <div class="min-w-full">
       <div class="prose mb-8">
         <p class="mt-0">
-          astro-erudite is an opinionated, unstyled static blogging template
-          that prioritizes simplicity and performance, built with <Link
-            href="https://astro.build"
-            external
-            underline>Astro</Link
-          >, <Link href="https://tailwindcss.com" external underline
-            >Tailwind</Link
-          >, and <Link href="https://ui.shadcn.com" external underline
-            >shadcn/ui</Link
-          >. It provides a clean foundation for your content while being
-          extremely easy to customize.
+          La Taberna es un lugar pensado para que las historias que jugamos en el <Link
+            href="https://www.instagram.com/pokecafe_pdc/"
+            underline>PokeCafé</Link> trasciendan más allá de la mesa de juego. Aquí, cada aventura, cada personaje y cada decisión quedan grabados para nuevos jugadores o para recordar aquellas épicas partidas.
         </p>
         <p>
-          To learn more about the philosophy behind this template, check out the
-          following blog post: <Link
-            href="/blog/the-state-of-static-blogs"
-            underline>The State of Static Blogs in 2024</Link
-          >.
+          Esta página está creada como homenaje a todo lo que nuestro <Link
+            href="https://www.instagram.com/meshdm/"
+            underline>DM Mesh</Link>, ha hecho por nosotros, a todas las risas y lágrimas que hemos compartido gracias a sus historias y esfuerzos. También va dedicada a todos los jugadores que han hecho de Dungeons & Dragons y el PokeCafé un lugar especial.
         </p>
-      </div>
-
-      <h2 class="mb-4 text-2xl font-medium">Example Projects Listing</h2>
-      <div class="flex flex-col gap-4">
-        {projects.map((project) => <ProjectCard project={project} />)}
-      </div>
+        <p>
+          ¡Gracias por ser parte de esta aventura!
+        </p>
     </div>
   </section>
 </Layout>

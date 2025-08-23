@@ -1,12 +1,12 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'astro-erudite',
+  title: 'La Taberna',
   description:
-    'astro-erudite is a opinionated, unstyled blogging template—built with Astro, Tailwind, and shadcn/ui.',
+    'La Taberna es un lugar donde los aventureros se reúnen para compartir historias y consejos sobre sus viajes.',
   href: 'https://astro-erudite.vercel.app',
-  author: 'jktrn',
-  locale: 'en-US',
+  author: 'Eroroshy',
+  locale: 'es-ES',
   featuredPostCount: 2,
   postsPerPage: 3,
 }
@@ -28,15 +28,15 @@ export const NAV_LINKS: SocialLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/jktrn',
+    href: 'https://github.com/Eroroshy',
     label: 'GitHub',
   },
   {
-    href: 'https://twitter.com/enscry',
+    href: 'https://twitter.com/eroroshy666',
     label: 'Twitter',
   },
   {
-    href: 'mailto:jason@enscribe.dev',
+    href: 'mailto:eroroshy666@gmail.com',
     label: 'Email',
   },
   {

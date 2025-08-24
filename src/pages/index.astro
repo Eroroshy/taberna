@@ -8,6 +8,26 @@ import Layout from '@/layouts/Layout.astro'
 import { getRecentPosts } from '@/lib/data-utils'
 
 const blog = await getRecentPosts(SITE.featuredPostCount)
+
+import { getAllTags, getPostsByTag } from '@/lib/data-utils'
+
+export async function getStaticPaths() {
+  const tagMap = await getAllTags()
+  const uniqueTags = Array.from(tagMap.keys())
+
+  return Promise.all(
+    uniqueTags.map(async (tag) => {
+      const posts = await getPostsByTag(tag)
+      return {
+        params: { id: tag },
+        props: {
+          tag,
+          posts,
+        },
+      }
+    }),
+  )
+}
 ---
 
 <Layout class="max-w-3xl">
@@ -52,5 +72,25 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
         >
       </Link>
     </div>
+  </section>
+  <section class="mt-8">
+    <h2 class="text-2xl font-medium mb-4">El grimorio de Erick para todo.</h2>
+    <div class="mb-4">
+      <span class="text-muted-foreground text-sm">Mostrando posts del</span>
+      <span class="ml-2 font-semibold">#Grimorio de Erick</span>
+    </div>
+    <ul class="flex flex-col gap-y-4">
+      {
+        (await getPostsByTag('Grimorio')).length > 0 ? (
+          (await getPostsByTag('Grimorio')).map((post) => (
+            <li>
+              <BlogCard entry={post} />
+            </li>
+          ))
+        ) : (
+          <li class="text-muted-foreground text-sm">No hay publicaciones para esta etiqueta.</li>
+        )
+      }
+    </ul>
   </section>
 </Layout>

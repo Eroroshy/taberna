@@ -35,7 +35,7 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
  
     {
       entry.data.image && (
-        <div class="max-w-3xs sm:shrink-0">
+        <div class="max-w-3xs sm:shrink-0" style="text-align:center; width:100%; margin:0 auto;">
           <Image
             src={entry.data.image}
             alt={entry.data.title}
